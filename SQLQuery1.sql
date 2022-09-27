@@ -72,7 +72,7 @@ order by Age
 
 
 
----Lowest 5 purchases by female with occupation > 16 and city category either a or b'''
+---Lowest 5 purchases by female with occupation > 16 and city category either a or b
 
 with cte_user as (select User_ID,sum(purchase) as Total_purchase,max(Occupation) as occ
 from [portfolio project]..sales
@@ -88,7 +88,7 @@ FETCH NEXT 5 ROWS ONLY
 
 
 
----The most purchased product of every city'''
+---The most purchased product of every city
 
 with cte_number as (select Product_ID ,count(Product_ID) as purchase_frequency,City_Category
 from [portfolio project]..sales
@@ -124,7 +124,7 @@ order by City_Category
 
 
 
----Users from each age group that stayed the minimum in a particular city but has the maximum purchase'''
+---Users from each age group that stayed the minimum in a particular city but has the maximum purchase
 
 with cte_min as (select distinct USER_ID, gender, age, Stay_In_Current_CIty_Years
 from [portfolio project]..sales
